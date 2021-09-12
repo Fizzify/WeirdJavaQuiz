@@ -67,19 +67,20 @@ public class JabaQuiz {
             this.score++;
         } else {
             System.out.println("[dumb ass!] shit response + ratio lmao");
-            this.score--;
         }
     }
 
     private void evaluateAnswers() {
+        System.out.println(" ");
+        System.out.println("[your score!] " + this.score + "/" + this.questions.size());
         if (this.score == this.questions.size()) {
             System.out.println("[results!] you are a pretty good developer! you follow all of the java coding style guidelines!");
+        } else if (this.score > this.questions.size() / 2) {
+            System.out.println("[resutls um] you are kinda there, you just do some things wrong, you'll get there bud dw dw.");
         } else if (this.score > 0) {
-            System.out.println("[resutls um] you are about there, you just do some things wrong, you'll get there bud dw dw.");
-        } else if (this.score == 0) {
-            System.out.println("[results yikes] you're probably still learning, and that's okay!");
+            System.out.println("[results yikes] you're probably still learning, and that's okay! or you were guessing and got some right");
         } else {
-            System.out.println("[sit down lmao, here are ur results] you probably dont code java, or you skid all day all night.");
+            System.out.println("[results bigger yikessss] you got none right, you will get there eventually though!");
         }
     }
 }
