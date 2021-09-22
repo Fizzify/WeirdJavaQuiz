@@ -3,7 +3,8 @@ package club.premiering.jabaquiz.question;
 import lombok.Getter;
 
 public abstract class AbstractQuestion {
-    @Getter private final String[] question;
+    @Getter
+    private final String[] question;
 
     public AbstractQuestion(final String[] question) {
         this.question = question;

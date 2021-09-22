@@ -2,8 +2,7 @@ package club.premiering.jabaquiz;
 
 import club.premiering.jabaquiz.question.AbstractQuestion;
 import club.premiering.jabaquiz.question.QuestionResponse;
-import club.premiering.jabaquiz.question.type.AllmanQuestion;
-import club.premiering.jabaquiz.question.type.UppercasePackageNamingQuestion;
+import club.premiering.jabaquiz.question.type.*;
 import club.premiering.jabaquiz.util.ListHelper;
 import lombok.Getter;
 
@@ -23,6 +22,11 @@ public class JabaQuiz {
 
         this.questions.add(new AllmanQuestion());
         this.questions.add(new UppercasePackageNamingQuestion());
+        this.questions.add(new YouTubeTutorialQuestion());
+        this.questions.add(new EclipseQuestion());
+        this.questions.add(new CharQuestion());
+        this.questions.add(new PrintQuestion());
+        this.questions.add(new ExtraQuestion());
 
         System.out.println("[info!] generated questions");
         System.out.println("[info!] asking questions");
