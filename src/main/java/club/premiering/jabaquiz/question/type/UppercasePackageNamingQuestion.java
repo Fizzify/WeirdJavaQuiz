@@ -5,7 +5,10 @@ import club.premiering.jabaquiz.question.QuestionResponse;
 
 public class UppercasePackageNamingQuestion extends AbstractQuestion {
     public UppercasePackageNamingQuestion() {
-        super("Do you use uppercases in your package names? \"yes\" or \"no\"");
+        super(new String[]{
+                "Do you use uppercases in your package names? \"yes\" or \"no\"",
+                "Example of uppercase packages: Com.Example.SomeProject.MainClass"
+        });
     }
 
     @Override

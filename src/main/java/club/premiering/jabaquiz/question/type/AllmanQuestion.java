@@ -5,7 +5,19 @@ import club.premiering.jabaquiz.question.QuestionResponse;
 
 public class AllmanQuestion extends AbstractQuestion {
     public AllmanQuestion() {
-        super("Do you use allman (indentation style)? \"yes\" or \"no\"");
+        super(new String[]{
+                "Do you use allman (indentation style)? \"yes\" or \"no\"",
+                "Example of allman:",
+                "public static void main(String[] args)",
+                "{",
+                "    System.out.println(\"hi!\");",
+                "}",
+                "",
+                "Example of normal Java code:",
+                "public static void main(String[] args) {",
+                "    System.out.println(\"hi!\");",
+                "}"
+        });
     }
 
     @Override

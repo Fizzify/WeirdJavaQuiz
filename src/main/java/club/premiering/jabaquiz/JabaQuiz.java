@@ -4,6 +4,7 @@ import club.premiering.jabaquiz.question.AbstractQuestion;
 import club.premiering.jabaquiz.question.QuestionResponse;
 import club.premiering.jabaquiz.question.type.AllmanQuestion;
 import club.premiering.jabaquiz.question.type.UppercasePackageNamingQuestion;
+import club.premiering.jabaquiz.util.ListHelper;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -40,16 +41,17 @@ public class JabaQuiz {
 
     private void askQuestion(final AbstractQuestion abstractQuestion, final Scanner scanner) {
         System.out.println(" ");
-        final int indexOfQuestion = this.questions.indexOf(abstractQuestion);
         String prefix;
-        if (indexOfQuestion == 0) {
+        if (ListHelper.isFirstInList(this.questions, abstractQuestion)) {
             prefix = "[first question!]";
-        } else if (indexOfQuestion == this.questions.size() - 1) {//size - 1 is max index
+        } else if (ListHelper.isLastInList(this.questions, abstractQuestion)) {//size - 1 is max index
             prefix = "[last question woo im almost done!]";
         } else {
             prefix = "[first question!]";
         }
-        System.out.println(prefix + " " + abstractQuestion.getQuestion());
+        for (final String questionLine : abstractQuestion.getQuestion()) {
+            System.out.println(prefix + " " + questionLine);
+        }
         System.out.println("[info!] please type in your response");
         System.out.print("[answer!] Type here: ");
 
@@ -74,7 +76,7 @@ public class JabaQuiz {
         System.out.println(" ");
         System.out.println("[your score!] " + this.score + "/" + this.questions.size());
         if (this.score == this.questions.size()) {
-            System.out.println("[results!] you are a pretty good developer! you follow all of the java coding style guidelines!");
+            System.out.println("[results!] you are a pretty good developer! you got all of the questions right!!");
         } else if (this.score > this.questions.size() / 2) {
             System.out.println("[resutls um] you are kinda there, you just do some things wrong, you'll get there bud dw dw.");
         } else if (this.score > 0) {
